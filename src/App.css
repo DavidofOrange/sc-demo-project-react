@@ -1,38 +1,704 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto&display=swap');
+
+:root {
+  /* colors */
+  --white-color: #FFFFFF;
+  --C4-gray-color: #C4C4C4;
+  --C6-gray-color: #c6c6c6;
+  --lt-gray-color: #9A9A9A;
+  --dk-gray-color: #3E3E3E;
+  --dkr-gray-color: #333333;
+  --blue-color: #10467E;
+  --dk-blue-color: #212B37;
+  --red-color: #ED1C22;
+  --br-red-color: #FF0909;
+  --black-color: #000000;
+
+   /* fonts */
+  --noto-font: 'Noto Sans JP', sans-serif;
+  --roboto-font: 'Roboto', sans-serif;
+ 
+   /* font-sizes */
+   --fs-800: 2rem;
+   --fs-700: 1.5rem;
+   --fs-600: 1rem;
+   --fs-500: .9rem;
+   --fs-400: .8rem;
+   --fs-200: .675rem;
+
+    /* letter-spacing */
+   --spacing-3: .05rem;
+   --spacing-2: .03rem;
+   --spacing-1: .01rem;
+  }
+
+  @media (min-width: 35em) {
+      :root {
+          /* font-sizes */
+          --fs-800: 3rem;
+          --fs-700: 2.5rem;
+          --fs-600: 1.2rem;
+          --fs-500: 1.25rem;
+          --fs-400: 1rem;
+          --fs-200: .8rem;
+
+          /* letter-spacing */
+          --spacing-3: .12rem;
+          --spacing-2: .1rem;
+          --spacing-1: .06rem;
+      }
+  }
+  
+  @media (min-width: 65em) {
+      :root {
+          /* font-sizes */
+          --fs-800: 4.38rem;
+          --fs-700: 3.13rem;
+          --fs-650: 1.75rem;
+          --fs-600: 1.38rem;
+          --fs-500: 1.13rem;
+          --fs-400: 1.125rem;
+          --fs-200: 1rem;
+          --fs-100: 0.88rem;
+
+          /*letter-spacing*/
+          --spacing-3: .2rem;
+          --spacing-2: .15rem;
+          --spacing-1: .09rem;
+      }
+  }
+
+/* typography */
+
+.font-white { color: var(--white-color); }
+.font-lt-gray { color: var(--lt-gray-color); }
+.font-dk-gray { color: var(--dk-gray-color); }
+.font-blue { color: var(--blue-color); }
+.font-dk-blue { color: var(--dk-blue-color); }
+.font-dkr-gray { color: var(--dkr-gray-color); }
+
+.fs-800 { font-size: var(--fs-800); }
+.fs-700 { font-size: var(--fs-700); }
+.fs-650 { font-size: var(--fs-650); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-400 { font-size: var(--fs-400); }
+.fs-200 { font-size: var(--fs-200); }
+.fs-100 { font-size: var(--fs-100); }
+
+.italic { font-style: italic; }
+
+.bold { font-weight: bold; }
+
+.roboto { font-family: var(--roboto-font); }
+.noto { font-family: var(--noto-font); }
+
+.line-height { line-height: 2;}
+
+.spacing-1 { letter-spacing: var(--spacing-1); }
+.spacing-2 { letter-spacing: var(--spacing-2); }
+.spacing-3 { letter-spacing: var(--spacing-3); }
+
+.bg-red { background-color: var(--red-color); }
+.bg-dk-blue { background-color: var(--dk-blue-color); }
+
+/* utility classes */
+
+.display-block { display: block; }
+
+.gap { gap: 1em; }
+
+.margin-1 { margin: 3rem 0; }
+
+.grid { display: grid; }
+
+.flex { display: flex; }
+
+.float-right { float: right; }
+
+.float-left { float: left; }
+
+.center-text { text-align: center; }
+
+.center-items { align-items: center; }
+
+.decoration-none { text-decoration: none; }
+
+.list-style-none { list-style: none; }
+
+.list-style-square { list-style-type: square; }
+
+.container {
+  padding: 0 1rem;
+  margin: 0 auto;
+  max-width: 60rem;
+}
+
+.grid-container {
   text-align: center;
+  display: grid;
+  place-items: center;
+  padding: 0 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-align { text-align: center; }
+.place-center { place-items: center;}
+.justify { justify-content: center; }
+
+.hidden { display: none; }
+
+.indent { text-indent: .5rem; }
+
+/* components */
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* header section */
+
+.logo-bar {
+  height: 3.6rem;
+  padding: .5rem;
+  justify-content: space-between;
+}
+
+.logo {
+  padding-right: .5rem;
+}
+
+.blue-phone {
+  border: solid 4px var(--blue-color);
+  width: 1.5rem;
+  height: 1.4rem;
+  padding: .05rem;
+}
+
+.toggle-button {
+  background: var(--blue-color) url("./Assets/icon-hamburger.svg") center center no-repeat;
+  width: 2.8rem;
+  height: 2.5rem;
+}
+
+.main-nav {
+  background-color: var(--dk-blue-color); 
+}
+
+nav ul li {
+  padding-bottom: 1.5rem;
+}
+
+.main-nav a {
+  color: var(--white-color);
+  text-decoration: none;
+}
+
+.banner-container {
+  width: 100%;
+  height: 14rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-banner {
+  width: 100%;
+  height: 18rem;
+  background: url("./Assets/banner-mobile1.png") no-repeat;
+  opacity: 1;
+  padding-left: 1.9rem;
+  padding-top: 1.5rem;
+  position: absolute;  
+}
+
+.banner-text {
+  text-align: left;
+  letter-spacing: 3.5px;
+  opacity: 1;
+  padding: 0.5rem;
+}
+
+/* main */
+
+/* greetings section */
+.greetings-container {
+  padding-bottom: 4rem;
+}
+
+main section {
+  margin-bottom: 4rem;
+}
+
+.greetings-grid {
+  display: grid;
+  place-items: center;   
+}
+
+.greetings-image-container {
+  display: relative;
+}
+
+.greetings-image {
+  width: 12rem;
+  height: 16rem;
+  background: url("./Assets/グループ 1750/グループ 1750-mobile.png");
+  background-size: cover;
+  margin-bottom: 1rem;
+  display: absolute; 
+}
+
+.greetings-name {
+  padding-top: 1rem;
+}
+
+/* vision section */
+
+.vision-image {
+  width: 100%;
+  height: 8rem;
+  position: relative;
+  z-index: -1;
+  background: url("./Assets/マスクグループ 94/マスクグループ 94-mobile.png") no-repeat;
+  background-size: cover;
+}
+
+.vision-container {
+  background-color: var(--white-color);
+  margin: 0 .5rem;
+}
+
+/* company section */
+
+.company-info li {
+  border-bottom: solid var(--dk-blue-color) 1px;
+}
+
+.company-info-details li{
+  margin-left: 1rem;
+  border-bottom: solid var(--C4-gray-color) 1px;
+}
+
+.company-grid {
+  display: grid;
+  grid-template-columns: 5rem auto;
+  column-gap: .5rem;
+  margin: 0 1rem;
+}
+
+.company-grid ul li {
+  padding: 1rem 0;
+  border-bottom: 1px solid;
+}
+
+.company-grid .company-info1 li {
+  border-color: var(--blue-color);
+}
+
+.company-grid .company-info2 li {
+  border-color: var(--C4-gray-color);
+}
+
+/* access section */
+
+.map-container {
+  width: 100%;
+  height: 100%; 
+  overflow: hidden;
+}
+
+.map-location-1 {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.map-location-1::after {
+  content: '';
+  height: 4px;
+  width: 70%;
+  background: var(--blue-color);
+  position: absolute;
+  left: calc(40% - 25%);
+  bottom: 0;
+}
+
+.map-location-2 {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.map-location-2::after {
+  content: '';
+  height: 4px;
+  width: 50%;
+  background: var(--blue-color);
+  position: absolute;
+  left: calc(40% - 15%);
+  bottom: 0;
+}
+
+.g-map {
+  width: 90%; 
+  height: 18rem;
+  margin-top: 1rem;
+}
+
+.right-arrow {
+  border: solid var(--blue-color);
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 3.6px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.map-text p {
+  margin-top: 1rem;
+}
+
+.map-text ul li {
+  margin-left: 1rem;
+  list-style: none;  
+}
+
+.blue-bullet::before {
+  color: var(--blue-color);
+  content: "\25AA";
+  font-weight: bold;
+  width: 2rem;
+  display: inline-block;
+  margin-left: -1em;
+  font-size: 1.5rem;
+  position: relative;
+  top: .2em;
+}
+
+/* footer section*/
+
+footer {
+  margin-top: 8rem;
+  width: 100%;
+}
+
+.footer-banner {
+  background: transparent url("./Assets/グループ 1826/グループ 1826-mobile.png") no-repeat;
+  background-size: cover;
+  padding-left: 1.5rem;
+}
+
+.footer-logo {
+  padding: 2rem 0;
+}
+
+.footer-list li {
+ padding-bottom: 1rem;
+ border-right: white 1px solid;
+ padding-right: 1rem;
+}
+
+.white-phone {
+  margin-right: .3rem;
+}
+
+.footer-nav {
+  height: 100%;
+  padding-top: 1.5rem;
+}
+
+.footer-nav a {
+  color: var(--white-color);
+  text-decoration: none;
+}
+
+.foot-note {
+  padding: 1rem 0;
+  font-size: .75rem;
+}
+
+@media (max-width: 40em) {
+  .vision-container {
+      padding-top: .01rem;
+      margin: 0 1rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media (min-width: 35em) {
+  /*header section*/
+  .banner-container {
+      height: 17rem;
+  }
+  .main-banner {
+      height: 18rem;
+      background: url("./Assets/banner-tablet.png") no-repeat;
+      padding-left: 6rem;
+      padding-top: 3rem;
+  }
+  main section {
+      margin: 8rem 0;
+  }
+  /*vision section*/
+  .vision-image {
+      margin-bottom: -4rem;
+      height: 22rem;
+  }
+  .vision-container {
+      margin: 0 2rem;
+      padding: 1rem 1rem;   
+  }
+  /* company section*/
+  .company-grid {
+      display: grid;
+      grid-template-columns: 10rem auto;
+      column-gap: 1rem;
+  }
+  /*access section*/
+  .map-box {
+      display: flex;
+      justify-content: space-between; 
+  }
+  .right-arrow {
+      padding: 4.6px;
+  }
+.footer-list li {
+      padding-right: 4rem;
+}
 }
 
-.App-link {
-  color: #61dafb;
+@media (min-width: 45em) {
+  .main-nav a {
+      padding-right: .5rem;
+  }  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 64.98em) {
+  /* header section*/
+  .toggle-button {
+      background: var(--blue-color) url("./Assets/icon-hamburger.svg") center center no-repeat;
+      display: block;
+      z-index: 99999;
+      width: 2rem;
+      height: 2rem;
+      background-position: center;
+      margin-left: .5rem;
+      border: solid 4px var(--blue-color);
   }
-  to {
-    transform: rotate(360deg);
+  .toggle-button[aria-expanded="true"] {
+      background-image: url("./Assets/icon-close.svg");  
+  }
+  .main-nav {
+      position: fixed;
+      z-index: 999;
+      inset: 0 0 0 20%;
+      list-style: none;
+      padding: 2rem;
+      margin: 0;
+      flex-direction: column;
+      transform: translateX(100%);
+      
+      -webkit-transform: translateX(100%);
+      -moz-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+      -o-transform: translateX(100%);
+
+      transition: transform 500ms ease-in-out;    
+      -webkit-transition: -webkit-transform 500ms ease-out;
+      -moz-transition: transform 500ms ease-out;
+      -o-transition: transform 500ms ease-out;
+  } 
+  .main-nav[data-visible="true"] {
+      transform: translateX(0);
+
+      -webkit-transform: translateX(0);
+      -moz-transform: translateX(0);
+      -ms-transform: translateX(0);
+      -o-transform: translateX(0);
+  }
+  .greetings-grid {
+      display: grid;
+      grid-template-rows: 1fr auto;
+  }
+  .greetings-text {
+      margin-top: 2rem;
+      width: 88%;
+      height: 100%;
+  }
+  /* access section */
+  .g-map-btn {
+      margin-right: 1.5rem;
+  }
+  .map-text {
+      padding: 1.5rem;
+  }
+  /* footer section */
+  .footer-nav {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: auto;
+      text-align: center;
+  }
+  .footer-banner {
+      padding-bottom: 2rem;
   }
 }
+
+@media (min-width: 65em) {
+  .hidden {
+      display: block;
+  }
+  /* header section*/
+  .main-banner {
+      height: 22rem;
+      width: 100%;
+      background: url("./Assets/グループ 41@2x-desktop.png") no-repeat;
+      background-position: center;
+      background-size: cover;
+      padding-left: 12rem;
+      padding-top: 5rem;
+  }
+  .blue-phone {
+      border: none;
+      padding-top: .4rem;
+      padding-right: .4rem;
+  }
+  .お問い合わせ {
+      height: 3vh;
+      width: 12rem;
+      padding-top: .5rem;
+      margin-left: 2rem;
+      text-align: center;
+      border-radius: .1rem;
+  }
+  .logo-bar {
+      height: 5rem;
+      padding: 1rem;
+      justify-content: space-between;
+  }
+  .toggle-button {
+      display: none;
+  }
+  .main-nav {
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      margin: 0 1rem;
+  }
+  .main-nav a {
+      color: var(--dk-gray-color);
+  }
+  
+  .main-nav > li {
+      padding-left: 1rem;
+      position: relative;
+  }
+  .main-nav > li + li::after {
+      content: '';
+      background: rgb(226, 226, 226);
+      position: absolute;
+      bottom: 60%;
+      left: 0;
+      height: 35%;
+      width: 2px;
+  }
+  .banner-container {
+      height: 32rem;
+  }
+  .main-banner {
+      padding-left: 14rem;
+  }
+  /* greetings section */
+  .greetings-container {
+      padding-bottom: 8rem;
+  }
+  .greetings-grid {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 2rem;
+  }
+  .greetings-image {
+      width: 16rem;
+      height: 22rem;
+      background: url("./Assets/グループ 1750/グループ 1750@2x-desktop.png") no-repeat;
+      background-size: cover; 
+  }
+  .greetings-text {
+      width: 36rem;
+  }
+  /* vision section */
+  .vision-image {
+      height: 35rem;
+      width: 100%;
+      background: url("./Assets/マスクグループ 94/マスクグループ 94@2x-desktop.png") no-repeat;
+      background-size: cover;
+  }
+  .vision-container {
+      margin: auto;
+      padding: 3rem 6rem;   
+  }
+  .vision-text {
+      margin: 0 3.5rem;
+  }
+  /* company section */
+  .company-grid {
+      padding: 0 3rem;
+  }
+  /* access section */
+  .map-container {
+      margin: 0 4rem;
+  }
+  .g-map {
+      width: 24.69rem; 
+      height: 21.19rem;
+      margin-top: 1rem;
+  }
+  .g-map-btn {
+      margin-right: .5rem;
+  }
+  .right-arrow {
+      padding: 5.5px;
+  }
+  /* footer section */
+  footer {
+      overflow: hidden;
+  }
+  .footer-banner {
+      height: 20rem;
+      width: 100%;
+      background: url("./Assets/グループ 1826/グループ 1826@2x-desktop.png") no-repeat;
+      background-size: cover;
+  }
+  .footer-list li {
+      padding-bottom: 1rem;
+  }
+  .white-phone {
+      height: 1.5rem;
+      margin-right: .5rem;
+      margin-top: .8rem;
+  }
+  .お問い合わせ-footer {
+      width: 17.5rem;
+      height: 2.48rem;
+  }
+  .footer-nav li a {
+      text-decoration: none;
+  }
+  .footer-nav > li {
+      padding-left: 1rem;
+      position: relative;
+  }
+  .footer-nav > li + li::after {
+      content: '';
+      background: rgb(226, 226, 226);
+      position: absolute;
+      bottom: 60%;
+      left: 0;
+      height: 25%;
+      width: 2px;
+  }
+  .nav-end {
+      border-right: none;
+  }
+}
+
+
